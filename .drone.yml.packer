@@ -1,0 +1,16 @@
+---
+kind: pipeline
+type: docker
+name: build
+
+platform:
+  os: linux
+  arch: amd64
+
+steps:
+- name: packer
+  image: letfn/drone-packer
+  commands:
+  - make packer-build
+
+...
